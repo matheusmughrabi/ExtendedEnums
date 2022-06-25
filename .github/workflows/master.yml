@@ -18,7 +18,7 @@ jobs:
         dotnet-version: '6.0.x'
 
     - name: Build with dotnet
-      run: dotnet build .\ExtendedEnums\ --configuration Release
+      run:  dotnet build .\ExtendedEnums\ExtendedEnums.sln --configuration Release
 
     - name: Test
       run: dotnet test
