@@ -18,13 +18,13 @@ jobs:
         dotnet-version: '6.0.x'
 
     - name: Build with dotnet
-      run:  dotnet build .\ExtendedEnums\ExtendedEnums.sln --configuration Release
+      run:  dotnet build ./ExtendedEnums/ExtendedEnums.sln --configuration Release
 
     - name: Test
       run: dotnet test
 
     - name: Create the Package
-      run: dotnet pack .\ExtendedEnums\ExtendedEnums\ --configuration Release
+      run: dotnet pack ./ExtendedEnums/ExtendedEnums/ --configuration Release
 
     - name: Publish to Nuget
       run: dotnet nuget push "ExtendedEnums/ExtendedEnums/bin/Release/*.nupkg" -k ${{secrets.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json
