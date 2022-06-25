@@ -4,6 +4,22 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+    <PackageId>ExtendedEnums</PackageId>
+    <Version>1.0.0</Version>
+    <!-- <icon></icon> -->
+    <License>MIT</License>
+    <Authors>Matheus Campanini Mughrabi</Authors>
+    <Company>Matheusmug</Company>
+    <PackageDescription>Useful extensions for enums</PackageDescription>
+    <Description>Useful extensions for enums</Description>
+    <RepositoryUrl>https://github.com/matheusmughrabi/ExtendedEnums</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/matheusmughrabi/ExtendedEnums</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>enums;enum; enums extended;</PackageTags>
+    <ReleaseNotes>First publish</ReleaseNotes>
+    <Title>ExtendedEnums</Title>
+    <Summary>Useful extensions for enums</Summary>
   </PropertyGroup>
 
 </Project>
