@@ -1,0 +1,2 @@
+# RichEnums
+Enums functionality extended
