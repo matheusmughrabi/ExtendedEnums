@@ -12,13 +12,13 @@ namespace ExtendedEnums
         /// </summary>
         /// <param name="value"></param>
         /// <returns>string</returns>
-        public static string ToDescription(this Enum value)
+        public static string ToDescription<TEnum>(this TEnum value) where TEnum : Enum
         {
             if (value == null) throw new ExtendedEnumsException("Enum value cannot be null.");
 
             FieldInfo fieldInfo = value.GetType().GetField(value.ToString());
 
-            var attribute = (DescriptionAttribute)fieldInfo.GetCustomAttribute(typeof(DescriptionAttribute));
+            var attribute = (DescriptionAttribute)fieldInfo?.GetCustomAttribute(typeof(DescriptionAttribute));
 
             if (attribute is null)
                 return value.ToString();
@@ -44,7 +44,7 @@ namespace ExtendedEnums
         /// <returns>bool</returns>
         public static bool IsDefined<TEnum>(this TEnum enumValue) where TEnum : Enum
         {
-            var values = new HashSet<TEnum>((TEnum[])Enum.GetValues(typeof(TEnum)));
+            var values = GetValues<TEnum>();
             return values.Contains(enumValue);
         }
 

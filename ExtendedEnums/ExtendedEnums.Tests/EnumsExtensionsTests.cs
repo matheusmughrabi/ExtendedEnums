@@ -48,6 +48,11 @@ namespace ExtendedEnums.Tests
         public void ShouldReturnAllValuesOfTheEnum()
         {
             var values = EnumsExtensions.GetValues<CountriesEnum>();
+
+            Assert.AreEqual(3, values.Count());
+            Assert.AreEqual(CountriesEnum.Brazil, values.ToList()[0]);
+            Assert.AreEqual(CountriesEnum.UnitedStates, values.ToList()[1]);
+            Assert.AreEqual(CountriesEnum.Canada, values.ToList()[2]);
         }
 
         [TestMethod]
@@ -74,6 +79,16 @@ namespace ExtendedEnums.Tests
 
             Assert.AreEqual(2, enumResult.Value);
             Assert.AreEqual("United States of America", enumResult.Description);
+        }
+
+        [TestMethod]
+        public void ShouldReturnEnumResult_WithToStringDescription_WhenUndefinedEnumIsPassed()
+        {
+            var undefinedValue = (CountriesEnum)4;
+
+            var undefinedValueDescription = undefinedValue.ToDescription();
+
+            Assert.AreEqual("4", undefinedValueDescription);
         }
 
         [TestMethod]
